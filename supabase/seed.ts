@@ -52,7 +52,7 @@ async function seed() {
     }
   }
 
-  const achievements = [
+  const achievements: { name: string; description: string; icon: string; criteria: { type: string; value: string | number } }[] = [
     { name: 'First Flight', description: 'Complete your first lesson', icon: '🛫', criteria: { type: 'lessons_completed', value: 1 } },
     { name: '7-Day Streak', description: '7 consecutive days of training', icon: '🔥', criteria: { type: 'streak', value: 7 } },
     { name: 'Cessna Certified', description: 'Complete all Cessna 172 lessons', icon: '🏆', criteria: { type: 'aircraft_complete', value: 'cessna-172' } },
