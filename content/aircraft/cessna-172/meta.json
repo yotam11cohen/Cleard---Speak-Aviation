@@ -1,0 +1,9 @@
+{
+  "name": "Cessna 172",
+  "slug": "cessna-172",
+  "category": "GA",
+  "description": "Start your aviation journey with the world's most popular training aircraft. Learn basic VFR communications at towered airports.",
+  "icon_url": "/icons/cessna-172.png",
+  "unlock_level": 1,
+  "order_index": 1
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Airbus A320neo",
+  "slug": "a320neo",
+  "category": "Commercial",
+  "description": "Step up to commercial aviation. Learn IFR procedures, ATIS, clearance delivery, and airline-style communication.",
+  "icon_url": "/icons/a320neo.png",
+  "unlock_level": 2,
+  "order_index": 2
+}
