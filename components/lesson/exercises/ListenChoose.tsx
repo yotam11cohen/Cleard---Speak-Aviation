@@ -27,7 +27,7 @@ export function ListenChoose({ content, onNext }: Props) {
     <div className="space-y-5">
       <div className="bg-slate-800 rounded-2xl p-5 border border-slate-700">
         <p className="text-xs text-slate-500 mb-1">ATC transmission:</p>
-        <p className="text-sky-300 italic text-lg">"{content.atc_text}"</p>
+        <p className="text-sky-300 italic text-lg">&ldquo;{content.atc_text}&rdquo;</p>
         <button
           onClick={() => speakATC(content.atc_text)}
           className="mt-3 text-xs text-slate-400 hover:text-sky-400 transition-colors"

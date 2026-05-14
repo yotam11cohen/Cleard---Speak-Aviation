@@ -13,9 +13,9 @@ export function VocabularyCard({ content, onNext }: Props) {
       </div>
       <div className="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/60">
         <p className="text-xs text-slate-500 mb-2">ATC says:</p>
-        <p className="text-sky-300 italic">"{content.example_atc}"</p>
+        <p className="text-sky-300 italic">&ldquo;{content.example_atc}&rdquo;</p>
         <p className="text-xs text-slate-500 mt-3 mb-2">You respond:</p>
-        <p className="text-green-300 italic">"{content.example_response}"</p>
+        <p className="text-green-300 italic">&ldquo;{content.example_response}&rdquo;</p>
       </div>
       <Button className="w-full" onClick={onNext}>Got it →</Button>
     </div>
