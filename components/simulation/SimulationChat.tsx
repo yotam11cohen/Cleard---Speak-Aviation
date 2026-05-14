@@ -6,10 +6,9 @@ import { SimulationMessage } from '@/types'
 
 interface Props {
   aircraftName: string
-  aircraftSlug: string
 }
 
-export function SimulationChat({ aircraftName, aircraftSlug }: Props) {
+export function SimulationChat({ aircraftName }: Props) {
   const [messages, setMessages] = useState<SimulationMessage[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -20,8 +19,9 @@ export function SimulationChat({ aircraftName, aircraftSlug }: Props) {
   const started = useRef(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     if (!started.current) { started.current = true; startScenario() }
-  }, [])
+  }, []) // startScenario intentionally omitted — runs once on mount only
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
 
