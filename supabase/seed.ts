@@ -29,26 +29,27 @@ async function seed() {
     if (!fs.existsSync(lessonsDir)) continue
     const lessonFiles = fs.readdirSync(lessonsDir).sort()
 
+    // Delete existing lessons for this aircraft (cascades to exercises)
+    await supabase.from('lessons').delete().eq('aircraft_id', aircraft.id)
+
     for (const lessonFile of lessonFiles) {
       const lessonData = JSON.parse(fs.readFileSync(path.join(lessonsDir, lessonFile), 'utf8'))
       const { exercises, ...lessonMeta } = lessonData
 
       const { data: lesson, error: lessonError } = await supabase
         .from('lessons')
-        .upsert({ ...lessonMeta, aircraft_id: aircraft.id }, { onConflict: 'aircraft_id,order_index' })
+        .insert({ ...lessonMeta, aircraft_id: aircraft.id })
         .select()
         .single()
 
       if (lessonError) { console.error(`Lesson error:`, lessonError); continue }
       console.log(`  ✓ Lesson: ${lesson.title}`)
 
-      for (const ex of exercises) {
-        const { error: exError } = await supabase
-          .from('exercises')
-          .upsert({ ...ex, lesson_id: lesson.id }, { onConflict: 'lesson_id,order_index' })
-        if (exError) console.error(`Exercise error:`, exError)
-      }
-      console.log(`    ✓ ${exercises.length} exercises seeded`)
+      const { error: exError } = await supabase
+        .from('exercises')
+        .insert(exercises.map((ex: Record<string, unknown>) => ({ ...ex, lesson_id: lesson.id })))
+      if (exError) console.error(`Exercise error:`, exError)
+      else console.log(`    ✓ ${exercises.length} exercises seeded`)
     }
   }
 
