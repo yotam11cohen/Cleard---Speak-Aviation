@@ -6,7 +6,7 @@ import { VocabularyCard } from '@/components/lesson/exercises/VocabularyCard'
 import { ListenChoose } from '@/components/lesson/exercises/ListenChoose'
 import { FillBlank } from '@/components/lesson/exercises/FillBlank'
 import { CompletePhrase } from '@/components/lesson/exercises/CompletePhrase'
-import { Exercise, Lesson } from '@/types'
+import { Exercise, Lesson, VocabularyContent, ListenChooseContent, FillBlankContent, CompletePhraseContent } from '@/types'
 
 interface Props {
   lesson: Lesson
@@ -55,16 +55,16 @@ export function LessonClient({ lesson, exercises, aircraftSlug }: Props) {
       </div>
 
       {current.type === 'vocabulary' && (
-        <VocabularyCard content={current.content as any} onNext={() => handleNext(true)} />
+        <VocabularyCard content={current.content as VocabularyContent} onNext={() => handleNext(true)} />
       )}
       {current.type === 'listen_choose' && (
-        <ListenChoose content={current.content as any} onNext={handleNext} />
+        <ListenChoose content={current.content as ListenChooseContent} onNext={handleNext} />
       )}
       {current.type === 'fill_blank' && (
-        <FillBlank content={current.content as any} onNext={handleNext} />
+        <FillBlank content={current.content as FillBlankContent} onNext={handleNext} />
       )}
       {current.type === 'complete_phrase' && (
-        <CompletePhrase content={current.content as any} onNext={handleNext} />
+        <CompletePhrase content={current.content as CompletePhraseContent} onNext={handleNext} />
       )}
     </main>
   )

@@ -27,7 +27,7 @@ export default async function SimulationPage({ params }: { params: { slug: strin
           ← {aircraft.name}
         </Link>
         <h1 className="text-xl font-bold text-white mt-2">🎙️ Live Simulation</h1>
-        <p className="text-slate-400 text-sm">Respond to ATC as if you're flying the {aircraft.name}.</p>
+        <p className="text-slate-400 text-sm">Respond to ATC as if you&apos;re flying the {aircraft.name}.</p>
       </div>
       <SimulationChat aircraftName={aircraft.name} />
     </main>
