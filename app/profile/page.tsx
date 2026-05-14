@@ -23,7 +23,7 @@ export default async function ProfilePage() {
   const { percent, next } = getXPProgress(profile?.total_xp ?? 0)
 
   return (
-    <main className="min-h-screen bg-slate-900 px-4 py-8 max-w-xl mx-auto">
+    <main className="min-h-screen bg-slate-900 px-4 py-8 pb-24 max-w-xl mx-auto">
       <Link href="/dashboard" className="text-sky-400 text-sm hover:underline">← Dashboard</Link>
       <div className="mt-6 mb-8 text-center">
         <div className="w-20 h-20 rounded-full bg-sky-600 flex items-center justify-center text-3xl font-bold text-white mx-auto mb-4">
@@ -49,8 +49,17 @@ export default async function ProfilePage() {
       </div>
 
       <div className="mb-8">
-        <p className="text-slate-400 text-sm mb-2">Progress to level {level + 1}</p>
-        <ProgressBar percent={next ? percent : 100} />
+        {next ? (
+          <>
+            <p className="text-slate-400 text-sm mb-2">Progress to level {level + 1}</p>
+            <ProgressBar percent={percent} />
+          </>
+        ) : (
+          <>
+            <p className="text-slate-400 text-sm mb-2">Max level reached 🏆</p>
+            <ProgressBar percent={100} />
+          </>
+        )}
       </div>
 
       <h2 className="text-lg font-semibold text-white mb-4">Achievements</h2>

@@ -29,7 +29,7 @@ export default async function AircraftPage({ params }: { params: { slug: string 
   const simulationUnlocked = completedCount >= 5
 
   return (
-    <main className="min-h-screen bg-slate-900 px-4 py-8 max-w-2xl mx-auto">
+    <main className="min-h-screen bg-slate-900 px-4 py-8 pb-24 max-w-2xl mx-auto">
       <Link href="/dashboard" className="text-sky-400 text-sm hover:underline">← Dashboard</Link>
       <div className="mt-4 mb-8">
         <p className="text-xs text-sky-400 font-semibold uppercase tracking-wide">{aircraft.category}</p>

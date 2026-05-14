@@ -20,7 +20,9 @@
       "Bash(dir /S /B *.ts *.tsx)",
       "Bash(findstr /V \"node_modules\")",
       "Bash(findstr /V \".next\")",
-      "Bash(dir /S /B content supabase)"
+      "Bash(dir /S /B content supabase)",
+      "Bash(git remote *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }

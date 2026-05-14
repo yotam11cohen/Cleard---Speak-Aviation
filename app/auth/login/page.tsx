@@ -1,7 +1,12 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { createClient } from '@/lib/supabase/server'
 import { LoginForm } from '@/components/auth/LoginForm'
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (user) redirect('/dashboard')
   return (
     <main className="min-h-screen bg-slate-900 flex flex-col items-center justify-center px-4">
       <div className="mb-8 text-center">

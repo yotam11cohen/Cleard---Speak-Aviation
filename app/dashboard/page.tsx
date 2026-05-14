@@ -31,7 +31,7 @@ export default async function DashboardPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-900 px-4 py-8 max-w-2xl mx-auto">
+    <main className="min-h-screen bg-slate-900 px-4 py-8 pb-24 max-w-2xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-white">

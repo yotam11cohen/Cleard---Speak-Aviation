@@ -1,7 +1,12 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { createClient } from '@/lib/supabase/server'
 import { Button } from '@/components/ui/Button'
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const supabase = createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (user) redirect('/dashboard')
   return (
     <main className="min-h-screen bg-slate-900 flex flex-col items-center justify-center px-4 text-center">
       <h1 className="text-5xl font-extrabold text-white mb-4">✈️ Cleard Speak</h1>
