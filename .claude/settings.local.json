@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@14 . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npx create-next-app@14 . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "Bash(npx create-next-app@14 cleard-temp --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "Bash(findstr \".env\")",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/@supabase/ssr/package.json'\\).version\\)\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\me\\\\Downloads\\\\Yotam\\\\development\\\\cleard-speak-aviation\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\me\\\\Downloads\\\\Yotam\\\\development\\\\cleard-speak-aviation\" -Force | Select-Object Name, @{Name='IsDir'; Expression={$_.PSIsContainer}})",
+      "Bash(grep -A 5 \"-- Achievements\" /c/Users/me/Downloads/Yotam/development/cleard-speak-aviation/supabase/migrations/001_initial_schema.sql)",
+      "Bash(npx jest *)",
+      "Bash(git init *)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\me\\\\Downloads\\\\Yotam\\\\development\\\\cleard-speak-aviation\\\\app\\\\aircraft\\\\[slug]\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(findstr \":3000\")",
+      "Bash(taskkill /PID 10296 /F)",
+      "PowerShell(Stop-Process -Id 10296 -Force)",
+      "Bash(dir /S /B *.ts *.tsx)",
+      "Bash(findstr /V \"node_modules\")",
+      "Bash(findstr /V \".next\")",
+      "Bash(dir /S /B content supabase)"
+    ]
+  }
+}
